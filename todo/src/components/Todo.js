@@ -1,4 +1,5 @@
 import React from 'react';
+import { TodoCard } from '../Styles';
 
 export default function Todo(props) {
     console.log("todo.js: props: ", props)
@@ -14,12 +15,12 @@ export default function Todo(props) {
     
 
     return (
-        <div 
+        <TodoCard 
             key={props.item.id} 
             className={verboseClassName}
             onClick={handleClick}
         >            
            {props.item.item}
-        </div>
+        </TodoCard>
     )
 }

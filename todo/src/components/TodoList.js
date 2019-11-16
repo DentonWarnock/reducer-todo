@@ -2,7 +2,7 @@ import React from 'react';
 import Todo from './Todo';
 
 export default function TodoList(props) {
-    console.log(props.todos);
+    console.log(props.item);
     return (
         
         <div className="todo-list">

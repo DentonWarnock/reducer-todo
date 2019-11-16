@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { StyledForm, StyledButton } from '../Styles';
 
 export default function TodoForm(props) {
     const [inputValue, setInputValue] = useState();
@@ -10,8 +11,10 @@ export default function TodoForm(props) {
 
     const handleAdd = e => {
         e.preventDefault();
-        props.dispatch({ type: "ADD_TODO", payload: inputValue });
-        setInputValue('');
+        if (inputValue !== "") {
+            props.dispatch({ type: "ADD_TODO", payload: inputValue });
+            setInputValue('');
+        }        
     }
 
     const handleClear = e => {
@@ -20,7 +23,7 @@ export default function TodoForm(props) {
     }
 
     return (
-        <form>
+        <StyledForm>
             <input
                 onChange={handleChange}
                 type="text"
@@ -28,12 +31,13 @@ export default function TodoForm(props) {
                 placeholder="enter todo..."
                 value={inputValue}
             />
-            <button onClick={handleAdd}>
+            <br></br>
+            <StyledButton onClick={handleAdd}>
                 Add Todo
-            </button>
-            <button onClick={handleClear}>
+            </StyledButton>
+            <StyledButton onClick={handleClear}>
                 Clear Completed
-            </button>
-        </form>
+            </StyledButton>
+        </StyledForm>
     )
 }

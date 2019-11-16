@@ -1,9 +1,9 @@
 export const initialState = [
-    {
-        item: '',
-        completed: false,
-        id: 3892987589
-    }
+    // {
+    //     item: '',
+    //     completed: false,
+    //     id: 3892987589
+    // }
 ];
 
 export const todoReducer = (state, action) => {
@@ -20,8 +20,9 @@ export const todoReducer = (state, action) => {
                 }
                 return todo;
             })
+        case 'CLEAR_COMPLETED':
+            return state.filter(todo => !todo.completed)
         default:
             return state;
-    }
-         
+    }         
 }
