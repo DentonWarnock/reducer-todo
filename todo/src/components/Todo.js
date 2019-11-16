@@ -19,7 +19,7 @@ export default function Todo(props) {
             className={verboseClassName}
             onClick={handleClick}
         >            
-           Todo: {props.item.item}
+           {props.item.item}
         </div>
     )
 }

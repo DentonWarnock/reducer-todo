@@ -11,6 +11,7 @@ export default function TodoForm(props) {
     const handleAdd = e => {
         e.preventDefault();
         props.dispatch({ type: "ADD_TODO", payload: inputValue });
+        setInputValue('');
     }
 
     const handleClear = e => {
