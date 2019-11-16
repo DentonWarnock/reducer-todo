@@ -8,8 +8,8 @@ export const initialState = [
 
 export const todoReducer = (state, action) => {
     switch(action.type) {
-        case 'CHANGE_TODO':
-            return {...state, todo: action.payload}
+        case 'ADD_TODO':
+            return [...state, {item: action.payload, id: Date.now(), completed: false}]
         default:
             return state;
     }

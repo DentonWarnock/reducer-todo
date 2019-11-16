@@ -8,8 +8,9 @@ export default function TodoList(props) {
         <div className="todo-list">
             {props.state.map(item => (
                 <Todo
-                    key={item.id}
-                    item={item.item} />
+                    item={item}
+                    dispatch={props.dispatch}
+                    handleClick={props.handleClick} />
             ))}
         </div>
     )
